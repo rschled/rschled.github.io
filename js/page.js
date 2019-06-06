@@ -34,9 +34,20 @@
       $("#mainNav").removeClass("navbar-shrink");
     }
   };
+
+  var projectCollapse = function() {
+      if ($(window).width() < 800) { 
+        $(".img-square-wrapper").removeClass("col-6"); 
+    } else {
+        $(".img-square-wrapper").addClass("col-6");
+    }
+  }
   // Collapse now if page is not at top
   navbarCollapse();
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
+
+  // Collapse project
+  projectCollapse();
 
 })(jQuery); // End of use strict
