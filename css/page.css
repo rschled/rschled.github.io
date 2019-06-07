@@ -705,19 +705,19 @@ footer {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto 100vh;
+    background-size: 100vw 100vh;
 }
 
 @media(max-width: 500px)
 {
   #page-list {
-    background-size: auto 100vh;
+    background-size: 100vw 100vh;
   }
 }
 @media(max-width: 1200px)
 {
   #page-list {
-    background-size: auto 100vh;
+    background-size: 100vw 100vh;
   }
 }
 
