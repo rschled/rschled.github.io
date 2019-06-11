@@ -715,78 +715,12 @@ footer {
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) {
+@media (max-device-width: 1024px) {
   #page-list {
-    background-image: url("../img/Balloons320x480.jpg");
+    background-image: none;
+    background-color: #ededed;
   }
 }
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  #page-list {
-    background-image: url("../img/Balloons480x320.jpg");
-  }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  #page-list {
-    background-image: url("../img/Balloons320x568.jpg");
-  }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-  #page-list {
-    background-image: url("../img/Balloons568x320.jpg");
-  }
-}
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) {
-  #page-list {
-    background-image: url("../img/Balloons375x667.jpg");
-  }
-}
-
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : landscape) {
-    #page-list {
-      background-image: url("../img/Balloons667x375.jpg");
-    }
-}
-
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : portrait) {
-    #page-list {
-      background-image: url("../img/Balloons414x736.jpg");
-    }
-}
-
-@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation : landscape) {
-    #page-list {
-      background-image: url("../img/Balloons736x414.jpg");
-    }
-} 
-
-@media only screen and (min-device-width: 600px) and (max-device-width: 800px) and (orientation : portrait) {
-  #page-list {
-    background-image: url("../img/Balloons600x800.jpg");
-  }
-}
-
-@media only screen and (min-device-width: 600px) and (max-device-width: 800px) and (orientation : landscape) {
-  #page-list {
-    background-image: url("../img/Balloons800x600.jpg");
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait) {
-  #page-list {
-    background-image: url("../img/Balloons768x1024.jpg");
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : landscape) {
-  #page-list {
-    background-image: url("../img/Balloons1024x768.jpg");
-  }
-}
-
 
 .card-horizontal {
   border-width: 2px;
