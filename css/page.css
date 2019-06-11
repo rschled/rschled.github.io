@@ -517,7 +517,7 @@ body.fade {
   background-color: #212529;
   background-image: url("/img/map-image.png");
   height: auto;
-  padding: 8vh 0 0;
+  padding: 1vh 0 0;
   margin: 0;
 }
 
@@ -614,7 +614,7 @@ body.fade {
 }
 
 .contact-section {
-  padding: 8vh 0 0;
+  padding: 4vh 0 0;
   background-color: #212529;
 }
 
@@ -697,7 +697,7 @@ footer {
 #page-list {
     /* The image used */
     background-image: none;
-    background-color: lightgrey;
+    background-color: #ededed;
 
     /* Set a specific height */
     
@@ -708,7 +708,7 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
 }
-@media (min-width: 1024)
+@media (min-width: 768px)
 {
   #page-list {
     background-image: url("../img/Balloons.jpg");
