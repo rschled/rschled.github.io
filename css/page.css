@@ -718,7 +718,7 @@ footer {
 @media (max-device-width: 1024px) {
   #page-list {
     background-image: none;
-    background-color: #ededed;
+    background-color: #ededed; 
   }
 }
 
