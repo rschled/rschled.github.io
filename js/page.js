@@ -53,7 +53,7 @@
 })(jQuery); // End of use strict
 
 var baseNodes = [
-  { id: "about", group: 0, label: "About Me", level: 6, tag: "" },
+  { id: "about", group: 0, label: "About Me", level: 6, tag: " sample tag" },
   { id: "career", group: 1, label: "Career Interests", level: 2 },
   { id: "background", group: 1, label: "My Background", level: 2 },
   { id: "extracurricular", group: 1, label: "Extracurriculars", level: 2 },
@@ -188,6 +188,8 @@ function updateGraph() {
     // we link the selectNode method here
     // to update the graph on every click
     .on('click', selectNode)
+    .on("mouseover", handleMouseOver)
+    .on("mouseout", handleMouseOut);
 
   nodeElements = nodeEnter.merge(nodeElements)
 
@@ -243,6 +245,10 @@ function wrap(text, width) {
   });
 }
 
+function selectNode(selectedNode) {
+  selectedNode.attr('r', 35 + .025 * width)
+}
+
 function updateSimulation() {
   updateGraph()
 
@@ -267,6 +273,37 @@ function updateSimulation() {
 // last but not least, we call updateSimulation
 // to trigger the initial render
 updateSimulation()
+
+// Create Event Handlers for mouse
+function handleMouseOver(d, i) {  // Add interactivity
+
+  // Use D3 to select element, change color and size
+  d3.select(this).attr({
+    fill: "orange",
+    r: radius * 2
+  });
+
+  // Specify where to put label of text
+  svg.append("text").attr({
+    id: "t" + d.x + "-" + d.y + "-" + i,  // Create an id for text so we can select it later for removing on mouseout
+    x: function () { return xScale(d.x) - 30; },
+    y: function () { return yScale(d.y) - 15; }
+  })
+    .text(function () {
+      return [d.x, d.y];  // Value of the text
+    });
+}
+
+function handleMouseOut(d, i) {
+  // Use D3 to select element, change color back to normal
+  d3.select(this).attr({
+    fill: "black",
+    r: radius
+  });
+
+  // Select text by id and then remove
+  d3.select("#t" + d.x + "-" + d.y + "-" + i).remove();  // Remove text location
+}
 
 function responsivefy(svg) {
   // get container + svg aspect ratio
@@ -294,3 +331,53 @@ function responsivefy(svg) {
     svg.attr("height", Math.round(targetWidth / aspect));
   }
 }
+
+ScrollReveal().reveal('#project1', {
+  delay: 250,
+  easing: 'ease-in',
+  distance: '150px',
+  origin: 'left'
+});
+ScrollReveal().reveal('#project2', {
+  delay: 250,
+  easing: 'ease-in',
+  distance: '150px',
+  origin: 'right'
+});
+ScrollReveal().reveal('.timeline', {
+  delay: 250,
+  easing: 'ease-in',
+  distance: '250px',
+  origin: 'left'
+});
+ScrollReveal().reveal('.timeline-inverted', {
+  delay: 250,
+  easing: 'ease-in',
+  distance: '250px',
+  origin: 'right'
+});
+ScrollReveal().reveal('.hvr-float', {
+  delay: 250,
+  easing: 'ease-in',
+  distance: '100px',
+  origin: 'bottom'
+});
+ScrollReveal().reveal('.contact-info', {
+  delay: 250,
+  easing: 'ease-in',
+  distance: '200px',
+  origin: 'bottom'
+});
+ScrollReveal().reveal('.intro1', {
+  delay: 250
+});
+ScrollReveal().reveal('.intro2', {
+  delay: 1250
+});
+ScrollReveal().reveal('.intro3', {
+  delay: 2250
+});
+
+
+
+

@@ -10,6 +10,20 @@
 
   <title>Rafael Schleder | Undergraduate Computer Engineer</title>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142405467-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-142405467-1');
+  </script>
+
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -18,6 +32,8 @@
 
   <!-- Custom styles for this template -->
   <link href="css/page.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/scrollreveal"></script>
 
 </head>
 
@@ -50,8 +66,9 @@
   <header class="head">
     <div class="container d-flex h-100 align-items-center">
       <div class="mx-auto text-center">
-        <h1 class="mx-auto my-2 text-uppercase">Nice To Meet You</h1>
-        <h2 class="mx-auto my-2">I am Rafael Schleder, scroll down to learn more about me </h2>
+        <h1 class="mx-auto my-2 text-uppercase intro1">Nice To Meet You</h1>
+        <h2 class="mx-auto my-2 intro2">I am Rafael Schleder</h2>
+        <h2 class="mx-auto my-2 intro3"> Scroll Down to Learn More About Me </h2>
         <div class="page-scroll">
           <a class="arrow js-scroll-trigger" href="#about">
             <i class="fa fa-angle-down fa-4x animated">
@@ -67,15 +84,16 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2 class="text-white mb-4">A Bit About Me</h2>
-          <p class="text-white-50"> I am currently pursuing a B.S.E. in Computer Engineering at University of Michigan. I am also studying Applied Math, Data Science, and Back-end Development. Here are some other things about me:
+          <h2 class="text-black mb-4">A Bit About Me</h2>
+          <p class="text-black-50"> I am currently pursuing a B.S.E. in Computer Engineering at University of Michigan. I am also studying Applied Math, Data Science, and Back-end Development. Here are some other things about me:
           </p>
         </div>
       </div>
     </div>
-    <svg width="960" height="500" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet">>
-    </svg>
+          <svg width="960" height="500" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet">>
+          </svg>
   </section>
+
   <!-- resume portion -->
   <section class="page-section" id="resume">
     <div class="container-fluid">
@@ -127,7 +145,7 @@
                 </div>
               </div>
             </li>
-            <li>
+            <li class="timeline">
               <div class="timeline-image">
                 <img class="rounded-circle img-fluid" src="img/afrl.jpg" alt="">
               </div>
@@ -163,7 +181,7 @@
                 </div>
               </div>
             </li>
-            <li>
+            <li class="timeline">
               <div class="timeline-image">
                 <img class="rounded-circle img-fluid" src="img/question.jpg" alt="">
               </div>
@@ -178,8 +196,8 @@
       </div>
     </div>
     <!-- Related Coursework-->
-    <div class="container">
-      <div class="row">
+    <div class="container pt-4">
+      <div class="row pt-4">
         <div class="col-lg-12 text-center">
           <h1 class="header">
             Related Coursework
@@ -268,11 +286,11 @@
     <div class="container">
       <div class="col-lg-12 text-center py-4">
         <h1 class="header text-white">
-          Experience
+          Projects
         </h1>
       </div>
       <!-- Project One Row -->
-      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+      <div class="row justify-content-center no-gutters mb-5 mb-lg-0" id="project1">
         <div class="col-lg-6">
           <a href="https://www.ziawoolz.com/"><img class="img-fluid border border-white" src="img/ZiaWoolz1.jpg"
               alt=""></a>
@@ -291,7 +309,7 @@
       </div>
 
       <!-- Project Two Row -->
-      <div class="row justify-content-center no-gutters">
+      <div class="row justify-content-center no-gutters" id="project2">
         <div class="col-lg-6">
           <a href="https://github.com/rschled/SocialDeterminantsHealth"><img class="img-fluid border border-white"
               src="img/NeuralDiagram1.jpg" alt=""></a>
@@ -320,7 +338,7 @@
 
       <div class="row">
 
-        <div class="col-md-6 mb-3 mb-md-0">
+        <div class="col-md-6 mb-3 mb-md-0 contact-info">
           <div class="card py-4 h-100">
             <div class="card-body text-center">
               <i class="fas fa-envelope text-primary mb-2"></i>
@@ -333,7 +351,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 mb-3 mb-md-0">
+        <div class="col-md-6 mb-3 mb-md-0 contact-info">
           <div class="card py-4 h-100">
             <div class="card-body text-center">
               <i class="fas fa-mobile-alt text-primary mb-2"></i>

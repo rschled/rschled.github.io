@@ -1,3 +1,6 @@
+html.sr .load-hidden {
+  visibility: hidden;
+}
 body {
   opacity: 1;
   transition: 0.7s opacity;
@@ -13,10 +16,13 @@ body.fade {
   margin-left: 0px;
   padding-right: 0px;
   padding-left: 0px;
+  font-family: 'Oswald',
+  sans-serif;
 }
 #mainNav {
   min-height: 56px;
   background-color: #fff;
+  
 }
 
 #mainNav .nav-item {
@@ -117,11 +123,14 @@ body.fade {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  font-family: 'Poppins',
+  sans-serif;
 }
 
 .head h1 {
   padding-top: 200px;
-  font-family: 'Varela Round';
+  font-family: 'Poppins',
+  sans-serif;
   font-size: 10vw;
   line-height: 10vw;
   letter-spacing: 1vw;
@@ -173,8 +182,7 @@ body.fade {
 .about-section {
   padding-top: 6rem;
   padding-bottom: 4rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#161616), color-stop(75%, rgba(22, 22, 22, 0.178)), to(rgba(22, 22, 22, 0.8)));
-  background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+  background-color: #f8f9fa; 
 }
 
 .about-section p {
@@ -186,7 +194,7 @@ body.fade {
 }
 
 #about .text {
-  color: white;
+  color: black;
   font-size: 1.5vw;
   position: absolute;
   top: 50%;
