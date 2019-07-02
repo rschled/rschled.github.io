@@ -335,37 +335,32 @@ function responsivefy(svg) {
 ScrollReveal().reveal('#project1', {
   delay: 250,
   easing: 'ease-in',
-  distance: '150px',
+  distance: '10%',
   origin: 'left'
 });
 ScrollReveal().reveal('#project2', {
   delay: 250,
   easing: 'ease-in',
-  distance: '150px',
+  distance: '10%',
   origin: 'right'
 });
 ScrollReveal().reveal('.timeline', {
   delay: 250,
   easing: 'ease-in',
-  distance: '250px',
+  distance: '15%',
   origin: 'left'
 });
 ScrollReveal().reveal('.timeline-inverted', {
   delay: 250,
   easing: 'ease-in',
-  distance: '250px',
+  distance: '15%',
   origin: 'right'
 });
-ScrollReveal().reveal('.hvr-float', {
-  delay: 250,
-  easing: 'ease-in',
-  distance: '100px',
-  origin: 'bottom'
-});
+
 ScrollReveal().reveal('.contact-info', {
   delay: 250,
   easing: 'ease-in',
-  distance: '200px',
+  distance: '10%',
   origin: 'bottom'
 });
 ScrollReveal().reveal('.intro1', {

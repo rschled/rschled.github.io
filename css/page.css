@@ -18,6 +18,7 @@ body.fade {
   padding-left: 0px;
   font-family: 'Oswald',
   sans-serif;
+  letter-spacing: 0;
 }
 #mainNav {
   min-height: 56px;
@@ -496,8 +497,8 @@ body.fade {
   background-color: #cccccc;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
   0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 10px;
-  border-color: #cccccc;
+  border-radius: 0px;
+  border-width: 0;
 }
 
 .hvr-float {
@@ -666,11 +667,6 @@ body.fade {
   color: #fff;
 }
 
-body {
-  font-family: 'Nunito';
-  letter-spacing: 0.0625em;
-}
-
 a {
   color:#fcd346;
 }
@@ -709,7 +705,7 @@ footer {
 
     /* Set a specific height */
     
-  background-image: url("../img/Balloons.jpg");
+    background-image: url("../img/Balloons.jpg");
     /* Create the parallax scrolling effect */
     background-position: center;
     background-repeat: no-repeat;
@@ -775,4 +771,14 @@ footer {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #fffd97;
+}
+
+.navbar {
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  font-family: 'Oswald',
+    sans-serif;
+  letter-spacing: 0;
 }
