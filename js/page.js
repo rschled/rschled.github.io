@@ -378,6 +378,13 @@ ScrollReveal().reveal('.intro3', {
   delay: 2250
 });
 
-
-
-
+if ($('#page-list').length) {
+  $(window).stellar({
+    responsive: true,
+    scrollProperty: 'scroll',
+    parallaxElements: false,
+    horizontalScrolling: false,
+    horizontalOffset: 0,
+    verticalOffset: 0
+  });
+}

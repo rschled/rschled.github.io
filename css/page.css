@@ -703,17 +703,17 @@ footer {
 /* List Page */
 
 #page-list {
+    position: relative;
     /* The image used */
-    background-image: none;
     background-color: #ededed;
 
     /* Set a specific height */
     
-
+  background-image: url("../img/Balloons.jpg");
     /* Create the parallax scrolling effect */
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 @media (min-width: 768px)
