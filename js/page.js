@@ -347,13 +347,13 @@ ScrollReveal().reveal('#project2', {
 ScrollReveal().reveal('.timeline', {
   delay: 250,
   easing: 'ease-in',
-  distance: '15%',
+  distance: '10%',
   origin: 'left'
 });
 ScrollReveal().reveal('.timeline-inverted', {
   delay: 250,
   easing: 'ease-in',
-  distance: '15%',
+  distance: '10%',
   origin: 'right'
 });
 
