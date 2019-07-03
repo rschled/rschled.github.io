@@ -716,7 +716,7 @@ footer {
 
 @media (max-device-width: 1024px) {
   #page-list {
-    background-image: url("../img/Balloons.jpg");
+    background-image: url("../img/Balloons768x1024.jpg");
     background-color: #ededed; 
   }
 }
