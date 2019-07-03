@@ -699,26 +699,8 @@ footer {
 /* List Page */
 
 #page-list {
-    position: relative;
-    /* The image used */
-      background-image: url("../img/Balloons.jpg");
+    background-image: url("../img/Balloons.jpg");
     background-color: #ededed;
-
-    /* Set a specific height */
-    
-  
-    /* Create the parallax scrolling effect */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-@media (max-device-width: 1024px) {
-  #page-list {
-    background-image: url("../img/Balloons375x667.jpg");
-    background-color: #ededed; 
-  }
 }
 
 .card-horizontal {
