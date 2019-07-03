@@ -701,27 +701,22 @@ footer {
 #page-list {
     position: relative;
     /* The image used */
+      background-image: url("../img/Balloons.jpg");
     background-color: #ededed;
 
     /* Set a specific height */
     
-    background-image: url("../img/Balloons.jpg");
+  
     /* Create the parallax scrolling effect */
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
-@media (min-width: 768px)
-{
-  #page-list {
-    background-image: url("../img/Balloons.jpg");
-  }
-}
 
 @media (max-device-width: 1024px) {
   #page-list {
-    background-image: none;
+    background-image: url("../img/Balloons.jpg");
     background-color: #ededed; 
   }
 }
