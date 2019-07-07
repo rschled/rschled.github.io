@@ -34,9 +34,11 @@
   <!-- Custom styles for this template -->
   <link href="css/page.css" rel="stylesheet">
 
+   <script src="js/scrollreveal.min.js"></script>
+
 </head>
 
-<body id="page-list" data-stellar-background-ratio="1">
+<body id="page-list" data-stellar-background-ratio=".25">
   <script>
     document.body.className = 'fade';
   </script>
@@ -60,162 +62,164 @@
     </div>
   </nav>
 
- <section class="pt-5">
- <div class="container py-5">
-  <div class="row">
+ <section id="parallax" class="pt-5">
+  <div class="container py-5">
+    <div class="row">
     
-    <!-- Project 1-->
-    <div class="col-12 mt-5 project-item">
-      <div class="card">
-        <div class="card-horizontal">
-          <div class="img-square-wrapper">
-            <a href="https://www.ziawoolz.com/"><img class="img-fluid" src="img/ZiaWoolz1.jpg" alt="Card image cap"></a>
+      <!-- Project 1-->
+      <div class="col-12 mt-5 project-item">
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <a href="https://www.ziawoolz.com/"><img class="img-fluid" src="img/ZiaWoolz1.jpg"  alt="Card image cap"></a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">ZiaWoolz | <small> Website </small></h4>
+              <p class="card-text">I designed and updated the website for a local fiber arts business   in Albuquerque, NM. I attempted to give it a clean modern look, and link to socials and   webstores.</p>
+            </div>
           </div>
-          <div class="card-body">
-            <h4 class="card-title">ZiaWoolz | <small> Website </small></h4>
-            <p class="card-text">I designed and updated the website for a local fiber arts business in Albuquerque, NM. I attempted to give it a clean modern look, and link to socials and webstores.</p>
+          <div class="card-footer">
+            <small class="text-muted">May '19</small>
           </div>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">May '19</small>
         </div>
       </div>
-    </div>
-    <!-- Project 2-->
-    <div class="col-12 mt-3 project-item">
-      <div class="card">
-        <div class="card-horizontal">
-          <div class="img-square-wrapper">
-            <a href="https://github.com/rschled/SocialDeterminantsHealth">
-            <img class="img-fluid" src="img/NeuralDiagram1.jpg" alt="Card image cap"></a>
+      <!-- Project 2-->
+      <div class="col-12 mt-3 project-item">
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <a href="https://github.com/rschled/SocialDeterminantsHealth">
+              <img class="img-fluid" src="img/NeuralDiagram1.jpg" alt="Card image cap"></a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Health Regression | <small> Machine Learning</small></h4>
+              <p class="card-text">It began as a project for my applied linear algebra class. I built   an ANN from scratch in python. I implemented least squares cost function and numerical  gradient approximation. My partner and I wrote the read in and added SVD for   optimization. </p>
+            </div>
           </div>
-          <div class="card-body">
-            <h4 class="card-title">Health Regression | <small> Machine Learning</small></h4>
-            <p class="card-text">It began as a project for my applied linear algebra class. I built an ANN from scratch in python. I implemented least squares cost function and numerical gradient approximation. My partner and I wrote the read in and added SVD for optimization. </p>
+          <div class="card-footer">
+            <small class="text-muted">April '19</small>
           </div>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">April '19</small>
         </div>
       </div>
-    </div>
-    <!-- Project 3-->
-    <div class="col-12 mt-3 project-item">
-      <div class="card">
-        <div class="card-horizontal">
-          <div class="img-square-wrapper">
-            <img class="img-fluid" src="img/Research_poster1.jpg" alt="Card image cap">
+      <!-- Project 3-->
+      <div class="col-12 mt-3 project-item">
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <img class="img-fluid" src="img/Research_poster1.jpg" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Michigan Research Community | <small> Presentation</small></h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the   bulk of the card's
+                content.</p>
+            </div>
           </div>
-          <div class="card-body">
-            <h4 class="card-title">Michigan Research Community | <small> Presentation</small></h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
+          <div class="card-footer">
+            <small class="text-muted">April '19</small>
           </div>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">April '19</small>
         </div>
       </div>
-    </div>
-    <!-- Project 5-->
-    <div class="col-12 mt-3 project-item">
-      <div class="card">
-        <div class="card-horizontal">
-          <div class="img-square-wrapper">
-            <img class="img-fluid" src="img/Naples_Sculpture1.jpg" alt="Card image cap">
+      <!-- Project 5-->
+      <div class="col-12 mt-3 project-item">
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <img class="img-fluid" src="img/Naples_Sculpture1.jpg" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Great Attractor Art Installation | <small> CAD Drafting </small></h4>
+              <p class="card-text">Naples Museum of Archeology Art Piece using motors to track the  Great Attractor. Assited with design and Lead CAD and engineering drawings </p>
+            </div>
           </div>
-          <div class="card-body">
-            <h4 class="card-title">Great Attractor Art Installation | <small> CAD Drafting </small></h4>
-            <p class="card-text">Naples Museum of Archeology Art Piece using motors to track the Great Attractor. Assited with design and Lead CAD and engineering drawings </p>
+          <div class="card-footer">
+            <small class="text-muted">March '19</small>
           </div>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">March '19</small>
         </div>
       </div>
-    </div>
-    <!-- Project 6-->
-    <div class="col-12 mt-3 project-item">
-      <div class="card" href="">
-        <div class="card-horizontal">
-          <div class="img-square-wrapper">
-            <img class="img-fluid" src="img/Drone1.jpg" alt="Card e cap">
+      <!-- Project 6-->
+      <div class="col-12 mt-3 project-item">
+        <div class="card" href="">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <img class="img-fluid" src="img/Drone1.jpg" alt="Card e cap">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title"> ZoomDroneIndustries |<small> Class Project</small></h4>
+              <p class="card-text"> Programed Autonomous Drone navigation, And for extra credit   designed, built, and programmed Self arming Parachute Engr 100 Autonomous Vehicles Class  project. I was software lead for the team</p>
+            </div>
           </div>
-          <div class="card-body">
-            <h4 class="card-title"> ZoomDroneIndustries |<small> Class Project</small></h4>
-            <p class="card-text"> Programed Autonomous Drone navigation, And for extra credit designed, built, and programmed Self arming Parachute Engr 100 Autonomous Vehicles Class project. I was software lead for the team</p>
+          <div class="card-footer">
+            <small class="text-muted">Fall '18</small>
           </div>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Fall '18</small>
         </div>
       </div>
-    </div>
-    <!-- Project 6-->
-    <div class="col-12 mt-3 project-item">
-      <div class="card">
-        <div class="card-horizontal">
-          <div class="img-square-wrapper">
-            <img class="img-fluid" src="img/Robot_Arm1.jpg" alt="Card image cap">
+      <!-- Project 6-->
+      <div class="col-12 mt-3 project-item">
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <img class="img-fluid" src="img/Robot_Arm1.jpg" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title"> RobotArm |<small> Mentorship </small></h4>
+              <p class="card-text">Some quick example text to build othe card title and make up the   bulk of the
+                card's
+                content.</p>
+            </div>
           </div>
-          <div class="card-body">
-            <h4 class="card-title"> RobotArm |<small> Mentorship </small></h4>
-            <p class="card-text">Some quick example text to build othe card title and make up the bulk of the
-              card's
-              content.</p>
+          <div class="card-footer">
+            <small class="text-muted">Spring '18</small>
           </div>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Spring '18</small>
         </div>
       </div>
-    </div>
-    <!-- Project 7-->
-    <div class="col-12 mt-3 project-item">
-      <div class="card">
-        <div class="card-horizontal">
-          <div class="img-square-wrapper">
-            <img class="img-fluid" src="img/Debate1.jpg" alt="Card image cap">
+      <!-- Project 7-->
+      <div class="col-12 mt-3 project-item">
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <img class="img-fluid" src="img/Debate1.jpg" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title"> Policy Debate |<small> Class</small></h4>
+              <p class="card-text">Some quick example text to build othe card title and make up the   bulk of the
+                card's
+                content.</p>
+            </div>
           </div>
-          <div class="card-body">
-            <h4 class="card-title"> Policy Debate |<small> Class</small></h4>
-            <p class="card-text">Some quick example text to build othe card title and make up the bulk of the
-              card's
-              content.</p>
+          <div class="card-footer">
+            <small class="text-muted"> High School </small>
           </div>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted"> High School </small>
         </div>
       </div>
-    </div>
-    <!-- Project 8-->
-    <div class="col-12 mt-3 project-item">
-      <div class="card">
-        <div class="card-horizontal">
-          <div class="img-square-wrapper">
-            <img class="img-fluid" src="img/pvpure1.jpg" alt="Card image cap">
+
+      <!-- Project 8-->
+      <div class="col-12 mt-3 project-item">
+        <div class="card">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+              <img class="img-fluid" src="img/pvpure1.jpg" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title"> PVpure |<small> Class</small></h4>
+              <p class="card-text">Some quick example text to build othe card title and make up the   bulk of the
+                card's
+                content.</p>
+            </div>
           </div>
-          <div class="card-body">
-            <h4 class="card-title"> PVpure |<small> Class</small></h4>
-            <p class="card-text">Some quick example text to build othe card title and make up the bulk of the
-              card's
-              content.</p>
+          <div class="card-footer">
+            <small class="text-muted">Summer '16</small>
           </div>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">Summer '16</small>
         </div>
       </div>
+
     </div>
-  </div>
   </div>
  </section>
 
 </body>
 
 <!-- Footer -->
-<footer class="bg-black small text-center text-white-50 py-5 sticky-footer">
+<footer class="bg-black small text-center text-white-50 py-5 sticky-footer" id="listFooter">
   <div class="container">
     <div class="row justify-content-center projects-button py-3">
       <a class="button4" href="index.html#projects" role="button">Back</a>

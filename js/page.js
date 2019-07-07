@@ -50,21 +50,11 @@
   // Collapse project
   projectCollapse();
 
-  if ($('#page-list').length) {
-    $(window).stellar({
-      responsive: true,
-      scrollProperty: 'scroll',
-      parallaxElements: false,
-      horizontalScrolling: false,
-      horizontalOffset: 0,
-      verticalOffset: 0
-    });
-  }
 
 })(jQuery); // End of use strict
 
 var baseNodes = [
-  { id: "about", group: 0, label: "About Me", level: 6, tag: " sample tag" },
+  { id: "about", group: 0, label: "My Life", level: 6, tag: " sample tag" },
   { id: "career", group: 1, label: "Career Interests", level: 2 },
   { id: "background", group: 1, label: "My Background", level: 2 },
   { id: "extracurricular", group: 1, label: "Extracurriculars", level: 2 },
@@ -383,4 +373,5 @@ ScrollReveal().reveal('.intro2', {
 ScrollReveal().reveal('.intro3', {
   delay: 2250
 });
+
 

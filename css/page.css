@@ -143,6 +143,10 @@ body.fade {
   color: #aaaaaa;
 }
 
+.head .intro3 {
+  font-size: 1.75vw;
+}
+
 @media (min-width: 768px) {
   .head h1 {
     font-size: 9vw;
@@ -179,7 +183,11 @@ body.fade {
 .fa-angle-down:before {
   content: "\f107";
 }
-
+.header {
+   font-family: 'Oswald',
+   sans-serif;
+   letter-spacing: 0;
+}
 .about-section {
   padding-top: 6rem;
   padding-bottom: 4rem;
@@ -387,10 +395,12 @@ body.fade {
 .timeline .timeline-heading h4 {
   margin-top: 0;
   color: inherit;
+  font-weight: bold;
 }
 
 .timeline .timeline-heading h4.subheading {
   text-transform: none;
+  font-weight: 500 ;
 }
 
 .timeline .timeline-body>ul,
@@ -399,7 +409,7 @@ body.fade {
 }
 
 .timeline .timeline-end {
-  padding: 5vw 0 0;
+  padding: 2.5vh 0 0;
 }
 
 @media (min-width: 768px) {
@@ -487,6 +497,13 @@ body.fade {
   .timeline>li.timeline-inverted>.timeline-panel {
     padding: 0 100px 20px 20px;
   }
+}
+#courses {
+  padding: 70px 0 0;
+}
+
+#courses .header {
+  padding: 0 0 15px;
 }
 
 #resume .course-item {
@@ -630,6 +647,7 @@ body.fade {
 .contact-section .card {
   border: 0;
   border-bottom: 0.25rem solid #fcd346;
+  border-radius: 0
 }
 
 .contact-section .card h4 {
@@ -699,13 +717,21 @@ footer {
 /* List Page */
 
 #page-list {
-    background-image: url("../img/Balloons.jpg");
-    background-color: #ededed;
+  background-color: #9b9b9b;
+  background-image: url(/img/triangle_background.png);
+  background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#page-list .card{
+  border-radius: 0;
 }
 
 .card-horizontal {
   border-width: 2px;
   border-color: white;
+  background-color: #f5f5f5;
 }
 
 @media(min-width: 800px)
@@ -718,8 +744,8 @@ footer {
 
 .sticky-footer {
   flex-shrink: none;
-  border-top-left-radius: 30% 10%;
-  border-top-right-radius: 30% 10%;
+  border-top-left-radius: 50% 80%; 
+  border-top-right-radius: 50% 80%;
 }
 
 ::-webkit-scrollbar {
@@ -733,7 +759,7 @@ footer {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background-color: #fcd346;
+    background-color: black;
     border-block-end-style: ridge;
     background-image: -webkit-linear-gradient(45deg,
       rgba(255, 255, 255, .2) 25%,
@@ -747,7 +773,7 @@ footer {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #fffd97;
+  background: #505050;
 }
 
 .navbar {
