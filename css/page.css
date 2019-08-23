@@ -210,6 +210,11 @@ body.fade {
   -webkit-text-stroke: 1px black;
 
 }
+@media(max-width: 400px) {
+  #mainBubble {
+    height: 0;
+  }
+}
 
 #mainBubble svg {
   left: 0;

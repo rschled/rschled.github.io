@@ -52,6 +52,8 @@
 
 
 })(jQuery); // End of use strict
+if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+  
 
 var root = {
   "name": "bubble",
@@ -425,6 +427,7 @@ function activateBubble(d, i) {
 }
 
 window.onresize = resetBubbles;
+}
 
 function responsivefy(svg) {
   // get container + svg aspect ratio
