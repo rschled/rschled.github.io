@@ -53,258 +53,378 @@
 
 })(jQuery); // End of use strict
 
-var baseNodes = [
-  { id: "about", group: 0, label: "My Life", level: 6, tag: " sample tag" },
-  { id: "career", group: 1, label: "Career Interests", level: 2 },
-  { id: "background", group: 1, label: "My Background", level: 2 },
-  { id: "extracurricular", group: 1, label: "Extracurriculars", level: 2 },
-  { id: "startups", group: 2, label: "I plan to work in startups", level: 2 },
-  { id: "ml", group: 2, label: "Machine Learning", level: 1 },
-  { id: "health", group: 2, label: "Health Data", level: 2 },
-  { id: "abq", group: 2, label: "I was born in ABQ, New Mexico", level: 2 },
-  { id: "control", group: 2, label: "I have Worked in Control Systems", level: 1 },
-  { id: "research", group: 2, label: "Interdisciplinary Research", level: 2 },
-  { id: "ent", group: 2, label: "Entrepreneurship and Innovation", level: 2 },
-  { id: "nerd", group: 2, label: "I enjoy Cinema, the MCU, and Game of Thrones", level: 2 },
-  { id: "hyperloop", group: 2, label: "Michigan Hyperloop", level: 2 },
-  { id: "ultimate", group: 2, label: "Ultimate Frisbee", level: 2 }
-]
+var root = {
+  "name": "bubble",
+  "children": [{
+    "name": "Background",
+    "description": "Hover to Learn about my History",
+    "children": [{
+      "name": "Albuquerque, NM",
+      "address": "",
+      "note": "I was born and raised in a small southwestern city, known for hot air balloons, Green Chiles, and beautiful landscape"
+    }, {
+      "name": "Control Systems",
+      "address": "",
+      "note": "I have worked with Advanced Manufacturing, and Autonomous Vehicles: Check out my Internships and Projects to see more"
+    }, {
+      "name": "Research",
+      "address": "",
+      "note": "A common thread in my former employment is research: Check out my experience section to learn more"
+    }]
+  }, {
+    "name": "Career",
+    "description": "Hover to Learn about my Professional interests",
+    "children": [{
+      "name": "Machine Learning",
+      "address": "",
+      "note": "I am interested in both the software and hardware components of this powerful technique"
+    }, {
+      "name": "Startups",
+      "address": "",
+      "note": "I hope to work on early stage growth companies, pushing technological progress"
+    }, {
+      "name": "Health Data",
+      "address": "",
+      "note": "Through projects and work, I have become interested in how health data can improve everyday lives"
+    }]
+  }, {
+    "name": "Extracurriculars",
+    "description": "Hover to Learn about how I spend my Free Time",
+    "children": [{
+      "name": "Interdisciplinary Research",
+      "note": "I enjoy collaborating with multiple disciplines, such as this past year working with UM Geology on experiment engineering",
+      "address": ""
+    }, {
+      "name": "Innovation",
+      "note": "I like working on entrepreneurship and new technologies",
+      "address": ""
+    }, {
+      "name": "Entertainment",
+      "note": "I spend my time watching and discussing Cinema, (my favorites are Tarantino's), keeping up with the news, and listening to Joe Rogan",
+      "address": ""
+    }, {
+      "name": "Ultimate Frisbee",
+      "note": "I played in high school, in intramural, and in a competitive summer league",
+      "address": ""
 
-var baseLinks = [
-  { target: "about", source: "career", strength: .1 },
-  { target: "about", source: "background", strength: .1 },
-  { target: "about", source: "extracurricular", strength: .1 },
-  { target: "career", source: "startups", strength: .1 },
-  { target: "career", source: "ml", strength: .1 },
-  { target: "career", source: "health", strength: .1 },
-  { target: "background", source: "abq", strength: .1 },
-  { target: "background", source: "control", strength: .1 },
-  { target: "extracurricular", source: "research", strength: .1 },
-  { target: "extracurricular", source: "ent", strength: .1 },
-  { target: "extracurricular", source: "nerd", strength: .1 },
-  { target: "extracurricular", source: "hyperloop", strength: .1 },
-  { target: "extracurricular", source: "ultimate", strength: .1 }
-]
+    }, {
+      "name": "Michigan Hyperloop",
+      "note": "After being interested in this technology, I joined the Control Systems group of this student project team",
+      "address": ""
+    }]
+  }]
+};
 
-var nodes = [...baseNodes]
-var links = [...baseLinks]
+var w = window.innerWidth * 0.95;
+var h = Math.ceil(w * 0.7 * .68);
+var oR = 0;
+var nTop = 0;
 
-var width = window.innerWidth
-var height = window.innerHeight
+var svgContainer = d3.select("#mainBubble")
+  .style("height", h + "px");
 
-var svg = d3.select('svg')
-svg.attr('width', width).attr('height', height)
-  .call(responsivefy)
+var svg = d3.select("#mainBubble").append("svg")
+  .attr("class", "mainBubbleSVG")
+  .attr("width", w)
+  .attr("height", h)
+  .on("mouseleave", function () {
+    return resetBubbles();
+  });
 
-var linkElements,
-  nodeElements,
-  textElements
+var mainNote = svg.append("text")
+  .attr("id", "bubbleItemNote")
+  .attr("x", w / 2)
+  .attr("y", w / 2 + 15)
+  .attr("font-size", "1.5vw")
+  .attr("dominant-baseline", "middle")
+  .attr("alignment-baseline", "middle")
+  .attr("text-anchor", "middle")
+  .style("fill", "#161616")
+  .text("Hover to learn more");
 
-// we use svg groups to logically group the elements together
-var linkGroup = svg.append('g').attr('class', 'links')
-var nodeGroup = svg.append('g').attr('class', 'nodes')
-var textGroup = svg.append('g').attr('class', 'texts')
 
-// we use this reference to select/deselect
-// after clicking the same element twice
-var selectedId
+//http://sunsp.net/demo/BubbleMenu
 
-// simulation setup with all forces
-var linkForce = d3
-  .forceLink()
-  .id(function (link) { return link.id })
-  .strength(function (link) { return link.strength })
+var bubbleObj = svg.selectAll(".topBubble")
+  .data(root.children)
+  .enter().append("g")
+  .attr("id", function (d, i) {
+    return "topBubbleAndText_" + i
+  });
 
-var simulation = d3
-  .forceSimulation()
-  .force('link', linkForce)
-  .force('charge', d3.forceManyBody().strength(- .3*width))
-  .force('center', d3.forceCenter(width / 2, height / 2 +50))
+console.log(root);
+nTop = root.children.length;
+oR = w * .68 / (1 + 3 * nTop);
 
-var dragDrop = d3.drag().on('start', function (node) {
-  node.fx = node.x
-  node.fy = node.y
-}).on('drag', function (node) {
-  simulation.alphaTarget(0.7).restart()
-  node.fx = d3.event.x
-  node.fy = d3.event.y
-}).on('end', function (node) {
-  if (!d3.event.active) {
-    simulation.alphaTarget(0)
-  }
-  node.fx = null
-  node.fy = null
-})
+h = Math.ceil(w * .68 / nTop * 2);
+svgContainer.style("height", h + "px");
 
-// select node is called on every click
-// we either update the data according to the selection
-// or reset the data if the same node is clicked twice
-function selectNode(selectedNode) {
-  if (selectedId === selectedNode.id) {
-    selectedId = undefined
-    resetData()
-    updateSimulation()
-  } else {
-    selectedId = selectedNode.id
-    updateData(selectedNode)
-    updateSimulation()
-  }
+var colVals = d3.scale.linear().domain([1, 3])
+  .interpolate(d3.interpolateHcl)
+  .range([d3.rgb("#FDBE18"), d3.rgb('#FFE18F')]);
 
-  var neighbors = getNeighbors(selectedNode)
+bubbleObj.append("circle")
+  .attr("class", "topBubble")
+  .attr("id", function (d, i) {
+    return "topBubble" + i;
+  })
+  .attr("r", function (d) {
+    return oR;
+  })
+  .attr("cx", function (d, i) {
+    return oR * (3 * (1 + i) - 1) + (w / 6);
+  })
+  .attr("cy", (h + oR) / 3)
+  .style("fill", function (d, i) {
+    return colVals(i);
+  }) // #1f77b4
+  .style("opacity", 0.6)
+  .on("mouseover", function (d, i) {
+    return activateBubble(d, i);
+  });
 
-  // we modify the styles to highlight selected nodes
-  nodeElements.attr('fill', function (node) { return getNodeColor(node, neighbors) })
-  textElements.attr('fill', function (node) { return getTextColor(node, neighbors) })
-  linkElements.attr('stroke', function (link) { return getLinkColor(selectedNode, link) })
-}
 
-function updateGraph() {
-  // links
-  linkElements = linkGroup.selectAll('line')
-    .data(links, function (link) {
-      return link.target.id + link.source.id
+bubbleObj.append("text")
+  .attr("class", "topBubbleText")
+  .attr("x", function (d, i) {
+    return oR * (3 * (1 + i) - 1) + (w / 6);
+  })
+  .attr("y", (h + oR) / 3)
+  .style("fill", "#808080") // #1f77b4
+  .attr("font-size", "2.25vw")
+  .attr("text-anchor", "middle")
+  .attr("dominant-baseline", "middle")
+  .attr("alignment-baseline", "middle")
+  .text(function (d) {
+    return d.name
+  })
+  .on("mouseover", function (d, i) {
+    return activateBubble(d, i);
+  });
+
+
+for (var iB = 0; iB < nTop; iB++) {
+  var childBubbles = svg.selectAll(".childBubble" + iB)
+    .data(root.children[iB].children)
+    .enter().append("g");
+
+  //var nSubBubble = Math.floor(root.children[iB].children.length/2.0);	
+
+  childBubbles.append("circle")
+    .attr("class", "childBubble" + iB)
+    .attr("id", function (d, i) {
+      return "childBubble_" + iB + "sub_" + i;
     })
+    .attr("r", function (d) {
+      return oR / 3.0;
+    })
+    .attr("cx", function (d, i) {
+      return (oR * (3 * (iB + 1) - 1) + oR * 1.5 * Math.cos((i - 1) * 45 / 180 * Math.PI) + (w / 6));
+    })
+    .attr("cy", function (d, i) {
+      return ((h + oR) / 3 + oR * 1.5 * Math.sin((i - 1) * 45 / 180 * Math.PI));
+    })
+    .attr("cursor", "pointer")
+    .style("opacity", 0.25)
+    .style("fill", function (d, i) {
+      return colVals(iB);
+    }) // #1f77b4
 
-  linkElements.exit().remove()
-
-  var linkEnter = linkElements
-    .enter().append('line')
-    .attr('stroke-width', 2)
-    .attr('stroke', '#c9c9c9')
-
-  linkElements = linkEnter.merge(linkElements)
-
-  // nodes
-  nodeElements = nodeGroup.selectAll('circle')
-    .data(nodes, function (node) { return node.id })
-
-  nodeElements.exit().remove()
-
-  var nodeEnter = nodeElements
-    .enter()
-    .append('circle')
-    .attr('r',  25 + .025*width)
-    .attr('fill', '#fcd349')
-    .call(dragDrop)
-    // we link the selectNode method here
-    // to update the graph on every click
-    .on('click', selectNode)
-    .on("mouseover", handleMouseOver)
-    .on("mouseout", handleMouseOut);
-
-  nodeElements = nodeEnter.merge(nodeElements)
-
-  // texts
-  textElements = textGroup.selectAll('text')
-    .data(nodes, function (node) { return node.id })
-
-  textElements.exit().remove()
-
-  var textEnter = textElements
-    .enter()
-    .append('text')
-    .text(function (node) { return node.label })
-
-    .attr('font-size', 10 + .004*width)
-    .attr('text-anchor', 'middle')
-    .attr("alignment-baseline", "middle")
-  textElements = textEnter.merge(textElements)
-}
-
-function wrap(text, width) {
-  text.each(function () {
-    var text = d3.select(this),
-      words = text.text().split(/\s+/).reverse(),
-      word,
-      line = [],
-      lineNumber = 0,
-      lastline = 0,
-      lineHeight = 0.1, // ems
-      x = text.attr("x"),
-      y = text.attr("y"),
-      dy = 0, //parseFloat(text.attr("dy")),
-      tspan = text.text(null)
-        .append("tspan")
-        .attr("x", x)
-        .attr("dy", 0);
-    while (word = words.pop()) {
-      line.push(word);
-      tspan.text(line.join(" "));
-      if ((tspan.node().getComputedTextLength() > width) && (tspan.node().textContent.split(" ").length > 1)) {
-        line.pop();
-        tspan.text(line.join(" "));
-        line = [word];
-        tspan = text.append("tspan")
-          .attr("dx", 25 - lastline)
-          .attr("y", y)
-          .attr("dy", ++lineNumber * lineHeight + 15)
-          .text(word);
+    .on("click", function (d, i) {
+      window.open(d.address);
+    })
+    .on("mouseover", function (d, i) {
+      //window.alert("say something");
+      var noteText = "";
+      if (d.note == null || d.note == "") {
+        noteText = d.address;
+      } else {
+        noteText = d.note;
       }
-      lastline = tspan.node().getComputedTextLength();
-    }
-    lastline = 0;
-  });
-}
-
-function selectNode(selectedNode) {
-  selectedNode.attr('r', 35 + .025 * width)
-}
-
-function updateSimulation() {
-  updateGraph()
-
-  simulation.nodes(nodes).on('tick', () => {
-    nodeElements
-      .attr('cx', function (node) { return node.x })
-      .attr('cy', function (node) { return node.y })
-    textElements
-      .attr('x', function (node) { return node.x })
-      .attr('y', function (node) { return node.y })
-    linkElements
-      .attr('x1', function (link) { return link.source.x })
-      .attr('y1', function (link) { return link.source.y })
-      .attr('x2', function (link) { return link.target.x })
-      .attr('y2', function (link) { return link.target.y })
-  })
-
-  simulation.force('link').links(links)
-  simulation.alphaTarget(0.7).restart()
-}
-
-// last but not least, we call updateSimulation
-// to trigger the initial render
-updateSimulation()
-
-// Create Event Handlers for mouse
-function handleMouseOver(d, i) {  // Add interactivity
-
-  // Use D3 to select element, change color and size
-  d3.select(this).attr({
-    fill: "orange",
-    r: radius * 2
-  });
-
-  // Specify where to put label of text
-  svg.append("text").attr({
-    id: "t" + d.x + "-" + d.y + "-" + i,  // Create an id for text so we can select it later for removing on mouseout
-    x: function () { return xScale(d.x) - 30; },
-    y: function () { return yScale(d.y) - 15; }
-  })
-    .text(function () {
-      return [d.x, d.y];  // Value of the text
+      d3.select("#bubbleItemNote").text(noteText);
+    })
+    .append("svg:title")
+    .text(function (d) {
+      return d.address;
     });
+
+  childBubbles.append("text")
+    .attr("class", "childBubbleText" + iB)
+    .attr("x", function (d, i) {
+      return (oR * (3 * (iB + 1) - 1) + oR * 1.5 * Math.cos((i - 1) * 45 / 180 * Math.PI) + (w / 6));
+    })
+    .attr("y", function (d, i) {
+      return ((h + oR) / 3 + oR * 1.5 * Math.sin((i - 1) * 45 / 180 * Math.PI));
+    })
+    .style("opacity", 0.5)
+    .attr("text-anchor", "middle")
+    .style("fill", "#808080")
+    .attr("font-size", ".6vw")
+    .attr("font-weight", 400)
+    .attr("cursor", "pointer")
+    .attr("dominant-baseline", "middle")
+    .attr("alignment-baseline", "middle")
+    .text(function (d) {
+      return d.name
+    })
+    .on("click", function (d, i) {
+      window.open(d.address);
+    });
+
 }
 
-function handleMouseOut(d, i) {
-  // Use D3 to select element, change color back to normal
-  d3.select(this).attr({
-    fill: "black",
-    r: radius
-  });
 
-  // Select text by id and then remove
-  d3.select("#t" + d.x + "-" + d.y + "-" + i).remove();  // Remove text location
+//});
+
+resetBubbles = function () {
+  w = window.innerWidth * 0.95;
+  oR = w * .68 / (1 + 3 * nTop);
+
+  h = Math.ceil(w * .68 / nTop * 2);
+  svgContainer.style("height", h + "px");
+
+  mainNote.attr("y", h - 90);
+
+  svg.attr("width", w);
+  svg.attr("height", h);
+
+  d3.select("#bubbleItemNote").attr("text-anchor", "middle").text("Hover to learn more");
+
+  var t = svg.transition()
+    .duration(650);
+
+  t.selectAll(".topBubble")
+    .attr("r", function (d) {
+      return oR;
+    })
+    .attr("cx", function (d, i) {
+      return oR * (3 * (1 + i) - 1) + (w / 6);
+    })
+    .attr("cy", (h + oR) / 3);
+
+  t.selectAll(".topBubbleText")
+    .attr("font-size", "2.25vw")
+    .attr("x", function (d, i) {
+      return oR * (3 * (1 + i) - 1) + (w / 6);
+    })
+    .attr("y", (h + oR) / 3);
+
+  for (var k = 0; k < nTop; k++) {
+    t.selectAll(".childBubbleText" + k)
+      .attr("x", function (d, i) {
+        return (oR * (3 * (k + 1) - 1) + oR * 1.5 * Math.cos((i - 1) * 45 / 180 * Math.PI) + (w / 6));
+      })
+      .attr("y", function (d, i) {
+        return ((h + oR) / 3 + oR * 1.5 * Math.sin((i - 1) * 45 / 180 * Math.PI));
+      })
+      .attr("font-size", ".6vw")
+      .style("opacity", 0.5);
+
+    t.selectAll(".childBubble" + k)
+      .attr("r", function (d) {
+        return oR / 3.0;
+      })
+      .style("opacity", 0.25)
+      .attr("cx", function (d, i) {
+        return (oR * (3 * (k + 1) - 1) + oR * 1.5 * Math.cos((i - 1) * 45 / 180 * Math.PI) + (w / 6));
+      })
+      .attr("cy", function (d, i) {
+        return ((h + oR) / 3 + oR * 1.5 * Math.sin((i - 1) * 45 / 180 * Math.PI));
+      });
+
+  }
 }
+
+
+function activateBubble(d, i) {
+  // increase this bubble and decrease others
+  var t = svg.transition()
+    .duration(d3.event.altKey ? 7500 : 350);
+
+  t.selectAll(".topBubble")
+    .attr("cx", function (d, ii) {
+      if (i == ii) {
+        // Nothing to change
+        return oR * (3 * (1 + ii) - 1) - 0.6 * oR * (ii - 1) + (w / 6);
+      } else {
+        // Push away a little bit
+        if (ii < i) {
+          // left side
+          return oR * 0.6 * (3 * (1 + ii) - 1) + (w / 6);
+        } else {
+          // right side
+          return oR * (nTop * 3 + 1) - oR * 0.6 * (3 * (nTop - ii) - 1) + (w / 6);
+        }
+      }
+    })
+    .attr("r", function (d, ii) {
+      if (i == ii)
+        return oR * 1.8;
+      else
+        return oR * 0.8;
+    })
+    .style("opacity", function (d, ii) {
+      return (i == ii) ? .7 : .5;
+    });
+
+  t.selectAll(".topBubbleText")
+    .attr("x", function (d, ii) {
+      if (i == ii) {
+        // Nothing to change
+        return oR * (3 * (1 + ii) - 1) - 0.6 * oR * (ii - 1) + (w / 6);
+      } else {
+        // Push away a little bit
+        if (ii < i) {
+          // left side
+          return oR * 0.6 * (3 * (1 + ii) - 1) + (w / 6);
+        } else {
+          // right side
+          return oR * (nTop * 3 + 1) - oR * 0.6 * (3 * (nTop - ii) - 1) + (w / 6);
+        }
+      }
+    })
+    .attr("font-size", function (d, ii) {
+      if (i == ii)
+        return "3.5vw";
+      else
+        return "1.5vw";
+    });
+
+  var signSide = -1;
+  for (var k = 0; k < nTop; k++) {
+    signSide = 1;
+    if (k < nTop / 2) signSide = 1;
+    t.selectAll(".childBubbleText" + k)
+      .attr("x", function (d, i) {
+        return (oR * (3 * (k + 1) - 1) - 0.6 * oR * (k - 1) + signSide * oR * 2.5 * Math.cos((i - 1) * 45 / 180 * Math.PI) + (w / 6));
+      })
+      .attr("y", function (d, i) {
+        return ((h + oR) / 3 + signSide * oR * 2.5 * Math.sin((i - 1) * 45 / 180 * Math.PI));
+      })
+      .attr("font-size", function () {
+        return (k == i) ? "1.5vw" : ".5vw";
+      })
+      .style("opacity", function () {
+        return (k == i) ? 1 : 0;
+      });
+
+    t.selectAll(".childBubble" + k)
+      .attr("cx", function (d, i) {
+        return (oR * (3 * (k + 1) - 1) - 0.6 * oR * (k - 1) + signSide * oR * 2.5 * Math.cos((i - 1) * 45 / 180 * Math.PI) + (w / 6));
+      })
+      .attr("cy", function (d, i) {
+        return ((h + oR) / 3 + signSide * oR * 2.5 * Math.sin((i - 1) * 45 / 180 * Math.PI));
+      })
+      .attr("r", function () {
+        return (k == i) ? (oR * 0.55) : (oR / 3.0);
+      })
+      .style("opacity", function () {
+        return (k == i) ? .35 : 0;
+      });
+  }
+}
+
+window.onresize = resetBubbles;
 
 function responsivefy(svg) {
   // get container + svg aspect ratio

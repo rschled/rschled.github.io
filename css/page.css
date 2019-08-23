@@ -4,6 +4,7 @@ html.sr .load-hidden {
 body {
   opacity: 1;
   transition: 0.7s opacity;
+  overflow-x: hidden;
 }
 
 body.fade {
@@ -189,13 +190,37 @@ body.fade {
    letter-spacing: 0;
 }
 .about-section {
-  padding-top: 6rem;
-  padding-bottom: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 0;
   background-color: #f8f9fa; 
 }
 
 .about-section p {
-  margin-bottom: 5rem;
+  margin-bottom: 0;
+}
+
+#mainBubble {
+  background: #f8f9fa;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0);
+  font: 10px sans-serif;
+  font-weight: 500;
+  height: 400px;
+  position: relative;
+  width: 95%;
+  -webkit-text-stroke: 1px black;
+
+}
+
+#mainBubble svg {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+#mainBubble circle.topBubble {
+  fill: #aaa;
+  stroke: #666;
+  stroke-width: 0;
 }
 
 #about .text-white-50 {
@@ -717,13 +742,14 @@ footer {
 /* List Page */
 
 #page-list {
-  background-color: #9b9b9b;
+  background-color: #ffe08d;
   background-image: url(/img/triangle_background.png);
   background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 #page-list .card{
   border-radius: 0;
 }
@@ -744,8 +770,8 @@ footer {
 
 .sticky-footer {
   flex-shrink: none;
-  border-top-left-radius: 50% 80%; 
-  border-top-right-radius: 50% 80%;
+  border-top-left-radius: 40% 60%; 
+  border-top-right-radius: 40% 60%;
 }
 
 ::-webkit-scrollbar {

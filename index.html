@@ -23,13 +23,10 @@
     gtag('config', 'UA-142405467-1');
   </script>
 
-
-  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Oswald|Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Poppins&display=swap" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="css/page.css" rel="stylesheet">
 
@@ -90,8 +87,12 @@
         </div>
       </div>
     </div>
-          <svg width="960" height="500" viewBox="0 0 960 500" preserveAspectRatio="xMidYMid meet">>
-          </svg>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!--Thanks to Shipeng Sun (sunsp.gis@gmail.com) for the origin of this design-->
+    <div class="row justify-content-center">
+      <div id="mainBubble">
+      </div>
+    </div>
   </section>
 
   <!-- resume portion -->
@@ -110,9 +111,11 @@
         <div class="col-lg-12">
           <ul class="timeline">
             <li>
+              <a href="http://sandia.gov">
               <div class="timeline-image">
                 <img class="rounded-circle img-fluid" src="img/sandialabs.jpg" alt="">
               </div>
+              </a>
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h4>Summer - Fall '17</h4>
@@ -120,53 +123,60 @@
                 </div>
                 <div class="timeline-body">
                   <p class="text-muted"> My first real summer job was for the Electromagnetic Theory Group
-                    manager, at this Department of Energy Lab. I worked on various projects: developing internal websites and databases, programming simulations in Python and C++, coding data analysis in matlab, CADing and manufacturing experiments, and stress testing materials. I learned a great deal and got exposed to what worklife looks like. </p>
+                    manager, at an Department of Energy Lab. I worked on various projects: developing internal websites and databases, programming simulations in Python and C++, coding data analysis in matlab, CADing and manufacturing experiments, and stress testing materials. </p>
                 </div>
               </div>
             </li>
             <li class="timeline-inverted">
+              <a href="http://aa.edu">
               <div class="timeline-image">
                 <img class="rounded-circle img-fluid" src="img/AA.jpg" alt="">
               </div>
+              </a>
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h4>Spring '18</h4>
                   <h4 class="subheading">H.S. Diploma @ Albuquerque Academy</h4>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted"> I studied a wide variety of subjects in high school, from math and science to philosophy and history. I graduated with a GPA of 4.35/4.0. During this time I was on the Speech and Debate Leadership Team, I was the Policy Debate Team Captain. I competed in the Super Computing Challenge and was the Ultimate Frisbee Team Captain. I volunteered at the Southwest Women’s Law Center and ACLU, and Roadrunner Foodbank.
+                  <p class="text-muted"> I studied a wide variety of subjects in high school, from logic and physics to philosophy and world history. I graduated with a GPA of 4.35/4.0. During this time,I was on the Speech and Debate Leadership Team and gained the title of Policy Debate Team Captain. Between competing in the Super Computing Challenge and acting as the Ultimate Frisbee Team Captain, I also enjoyed volunteering at the Southwest Women’s Law Center, ACLU, and Roadrunner Foodbank.
                   </p>
                 </div>
               </div>
             </li>
             <li class="timeline">
+              <a href="http://afrlscholars.usra.edu">
               <div class="timeline-image">
                 <img class="rounded-circle img-fluid" src="img/afrl.jpg" alt="">
               </div>
+              </a>
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h4> Summer '18</h4>
                   <h4 class="subheading"> Research Scholar @ Air Force Research Lab </h4>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted"> This lab was a collaborative effort between the University of New Mexico and
-                    the Space Vehicle Directorate focused on Autonomous Production. I worked on the control
-                    systems for advanced manufacturing of satellites. My project was researching hybrid manufacturing implementation in teh specific use case.</p>
+                  <p class="text-muted"> This research lab was a collaborative effort between the University of New Mexico and
+                    the Space Vehicle Directorate, coming together to work on Autonomous Production. I developed a control
+                    system for advanced manufacturing of satellites, focusing my research project on hybrid manufacturing implementation.</p>
                 </div>
               </div>
             </li>
             <li class="timeline-inverted">
+              <a href="http://lsa.umich.edu/earth">
               <div class="timeline-image">
                 <img class="rounded-circle img-fluid" src="img/michlogo1.jpg" alt="">
               </div>
+              </a>
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h4>October '18 - Present</h4>
                   <h4 class="subheading">Undergraduate Researcher @ University of Michigan</h4>
                 </div>
                 <div class="timeline-body">
-                  <p class="text-muted">For my first year of college I wanted to work in interdisciplinary research, and
-                  implementing advanced manufacturing for a UM Geology Department Lab was a good fit. I worked on making production quality equiptment for a deep earth replication assembly used to study light elements and diamond in the earth. I worked with lab equipment, measurement devices, CNC, and 3D printers.
+                  <p class="text-muted">During my first year of college, implementing advanced manufacturing for a UM
+                    Geology Department Lab was a good fit due to my interest in interdisciplinary research.
+                   I worked on making production quality equiptment for a deep earth replication assembly that's used to study light elements and diamond in the earth. This involved the use of lab equipment, measurement devices, CNC, and 3D printers.
                   </p>
                 </div>
               </div>
@@ -180,7 +190,7 @@
                   <h4 class="timeline-end">???</h4>
                   <h4 class="subheading">Be A Part of My Story</h4>
                     <div class="timeline-body">
-                      <p class="text-muted">Who knows what's next? Reach out and we can make something happen!
+                      <p class="text-muted">Who knows what's next? Reach out and let's make something happen!
                       </p>
                     </div>
                 </div>
@@ -190,6 +200,7 @@
         </div>
       </div>
     </div>
+
     <!-- Related Coursework-->
     <div class="container" id="courses">
       <div class="row">
@@ -206,7 +217,7 @@
                 Computer Science Pragmatics |<small> EECS 201 Spring '19</small>
               </h5>
               <p class="card-text">
-                Covered utilities of coding starting with linux, git, and advancing to more advanced topics.
+                This interactive course covered some of the pratical elements of development starting with linux, git, and scripting, then moving through CI, build-systems, debuggers, and IDEs. 
               </p>
             </div>
           </div>
@@ -215,10 +226,23 @@
           <div class="card border-light">
             <div class="card-body">
               <h5 class="card-title">
-                Algorithms and Data Structures |<small> EECS 280 Spring '19</small>
+                Algorithms and Data Structures I |<small> EECS 280 Spring '19</small>
               </h5>
               <p class="card-text">
-                Coding class covering C++ data structures and algorithms, including linked-lists, recursion, error handling.
+                The second course in the core CS curriculum, taught in C++, covered vectors, polymorphism, linked-lists, binary search trees, dynamic memory, recursion, error handling, and much more.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 course-item hvr-float">
+          <div class="card border-light">
+            <div class="card-body">
+              <h5 class="card-title">
+                Applied Linear Algebra |<small> MATH 214 Spring '19</small>
+              </h5>
+              <p class="card-text">
+                Covering the basics of linear algebra for engineers in a project-based class, I worked on linear
+                programming, error correcting codes, and machine learning.
               </p>
             </div>
           </div>
@@ -230,7 +254,7 @@
                 Discrete Math |<small> EECS 203 Spring '19</small>
               </h5>
               <p class="card-text">
-                covered symbolic logic, sums, algorithms, complexity, 
+                This course was an introduction to discrete math and the theory behind computer science, beginning with symbolic logic, induction, and sums, through Bayes, algorithms, and complexity. 
               </p>
             </div>
           </div>
@@ -239,10 +263,10 @@
           <div class="card border-light">
             <div class="card-body">
               <h5 class="card-title">
-                Computer Science Pragmatics |<small> EECS 201 Spring '19</small>
+                Intro Engineering: Autonomous Vehicles |<small> ENGR 100 Fall '18</small>
               </h5>
               <p class="card-text">
-                Covered utilities of coding starting with linux, git, and advancing to more advanced topics.
+                An exploration of technical and communications elements, through programming of an autonomous drone and a PID control system.
               </p>
             </div>
           </div>
@@ -251,22 +275,10 @@
           <div class="card border-light">
             <div class="card-body">
               <h5 class="card-title">
-                Computer Science Pragmatics |<small> EECS 201 Spring '19</small>
+                Differential Equations |<small> MATH 216 Fall '18</small>
               </h5>
               <p class="card-text">
-                Covered utilities of coding starting with linux, git, and advancing to more advanced topics.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-sm-6 course-item hvr-float">
-          <div class="card border-light">
-            <div class="card-body">
-              <h5 class="card-title">
-                Computer Science Pragmatics |<small> EECS 201 Spring '19</small>
-              </h5>
-              <p class="card-text">
-                Covered utilities of coding starting with linux, git, and advancing to more advanced topics.
+                The lecture focused on solving differential equations analytically, while the lab used matlab to find solutions using numerical methods.
               </p>
             </div>
           </div>
@@ -389,9 +401,6 @@
     });
   </script>
 
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-
-  <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
