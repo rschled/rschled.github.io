@@ -145,7 +145,7 @@ body.fade {
 }
 
 .head .intro3 {
-  font-size: 1.75vw;
+  font-size: 4vw;
 }
 
 @media (min-width: 768px) {
@@ -167,6 +167,9 @@ body.fade {
   }
   .head h2 {
     font-size: 2.5vw;
+  }
+  .head .intro3 {
+    font-size: 2vw;
   }
 }
 
@@ -770,45 +773,4 @@ footer {
   flex-shrink: none;
   border-top-left-radius: 40% 60%; 
   border-top-right-radius: 40% 60%;
-}
-
-@media only screen and (min-width: 480px)
-{
-::-webkit-scrollbar {
-  width: 15px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #ffffff;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background-color: black;
-    border-block-end-style: ridge;
-    background-image: -webkit-linear-gradient(45deg,
-      rgba(255, 255, 255, .2) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, .2) 50%,
-      rgba(255, 255, 255, .2) 75%,
-      transparent 75%,
-      transparent)
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #505050;
-}
-
-.navbar {
-  margin-right: 0px;
-  margin-left: 0px;
-  padding-right: 0px;
-  padding-left: 0px;
-  font-family: 'Oswald',
-    sans-serif;
-  letter-spacing: 0;
-}
 }
