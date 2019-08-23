@@ -129,6 +129,7 @@ var svg = d3.select("#mainBubble").append("svg")
   .attr("class", "mainBubbleSVG")
   .attr("width", w)
   .attr("height", h)
+  .call(responsivefy)
   .on("mouseleave", function () {
     return resetBubbles();
   });
@@ -285,7 +286,7 @@ resetBubbles = function () {
   h = Math.ceil(w * .68 / nTop * 2);
   svgContainer.style("height", h + "px");
 
-  mainNote.attr("y", h - 90);
+  mainNote.attr("y", .85*h);
 
   svg.attr("width", w);
   svg.attr("height", h);
