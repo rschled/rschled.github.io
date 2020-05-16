@@ -65,9 +65,9 @@ var root = {
       "address": "",
       "note": "I was born and raised in a small southwestern city, known for hot air balloons, Green Chiles, and beautiful landscape"
     }, {
-      "name": "Control Systems",
+      "name": "Natural Language Processing",
       "address": "",
-      "note": "I have worked with Advanced Manufacturing, and Autonomous Vehicles: Check out my Internships and Projects to see more"
+      "note": "I have a background in NLP from personal projects, coursework, and Internships"
     }, {
       "name": "Research",
       "address": "",
@@ -98,8 +98,8 @@ var root = {
       "address": ""
     }, {
       "name": "Innovation",
-      "note": "I like working on entrepreneurship and new technologies",
-      "address": ""
+      "note": "VP of New Member Education @ SEPi",
+      "address": "sepiumich.com"
     }, {
       "name": "Entertainment",
       "note": "I spend my time watching and discussing Cinema, (my favorites are Tarantino's), keeping up with the news, and listening to Joe Rogan",
@@ -109,10 +109,6 @@ var root = {
       "note": "I played in high school, in intramural, and in a competitive summer league",
       "address": ""
 
-    }, {
-      "name": "Michigan Hyperloop",
-      "note": "After being interested in this technology, I joined the Control Systems group of this student project team",
-      "address": ""
     }]
   }]
 };
