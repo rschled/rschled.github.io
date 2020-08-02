@@ -326,7 +326,7 @@ body.fade {
 
 .timeline {
   position: relative;
-  padding: 2rem 0 0;
+  padding: 0rem 0 0;
   list-style: none;
 }
 
@@ -537,11 +537,33 @@ body.fade {
   padding: 0 0 15px;
 }
 
+#DropdownBox {
+  border-color:#F8F9FA;
+  background-color:#F8F9FA;
+  -webkit-transition: transform .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+}
+
+#Dropdown {
+  background-color:#F8F9FA;
+  color: #fcd346
+}
+
+.rotated {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
 #resume .course-item {
   padding: 10px 10px 50px;
 }
 
-#resume .course-item .card {
+#resume .course-highlight {
+  padding: 25px 10px 25px;
+}
+
+#resume .card {
   background-color: #cccccc;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
   0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -720,7 +742,7 @@ a {
   color:#fcd346;
 }
 a:visited {
-  color: black;
+  color: #fcd346;
 }
 
 a:focus, a:hover {
@@ -776,6 +798,6 @@ footer {
 
 .sticky-footer {
   flex-shrink: none;
-  border-top-left-radius: 40% 60%; 
-  border-top-right-radius: 40% 60%;
+  border-top-left-radius: 2% 10%;
+  border-top-right-radius: 2% 10%;
 }

@@ -47,6 +47,10 @@
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
 
+  $('#DropdownBox').click(function () {
+    $(this).toggleClass('rotated');
+  });
+
   // Collapse project
   projectCollapse();
 
@@ -65,7 +69,7 @@ var root = {
       "address": "",
       "note": "I was born and raised in a small southwestern city, known for hot air balloons, Green Chiles, and beautiful landscape"
     }, {
-      "name": "Natural Language Processing",
+      "name": "NLP",
       "address": "",
       "note": "I have a background in NLP from personal projects, coursework, and Internships"
     }, {
@@ -98,11 +102,11 @@ var root = {
       "address": ""
     }, {
       "name": "Innovation",
-      "note": "VP of New Member Education @ SEPi",
+      "note": "former VP of New Member Education, current COO @ SEPi",
       "address": "sepiumich.com"
     }, {
       "name": "Entertainment",
-      "note": "I spend my time watching and discussing Cinema, (my favorites are Tarantino's), keeping up with the news, and listening to Joe Rogan",
+      "note": "I spend my time watching and discussing Cinema, (my favorites are Tarantino's), baking sourdough and cookies, and photoshopping pictures of my friends",
       "address": ""
     }, {
       "name": "Ultimate Frisbee",
@@ -195,7 +199,7 @@ bubbleObj.append("text")
   .attr("dominant-baseline", "middle")
   .attr("alignment-baseline", "middle")
   .text(function (d) {
-    return d.name
+    return d.name.split(/(?=[A-Z][a-z])|\s+/g)
   })
   .on("mouseover", function (d, i) {
     return activateBubble(d, i);
@@ -263,9 +267,7 @@ for (var iB = 0; iB < nTop; iB++) {
     .attr("cursor", "pointer")
     .attr("dominant-baseline", "middle")
     .attr("alignment-baseline", "middle")
-    .text(function (d) {
-      return d.name
-    })
+    .text(d => d.name)
     .on("click", function (d, i) {
       window.open(d.address);
     });

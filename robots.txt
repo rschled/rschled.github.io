@@ -1,0 +1,19 @@
+User-Agent: *
+Disallow: /img/AA.jpg
+Disallow: /img/afrl.jpg
+Disallow: /img/DOH.jpg
+Disallow: /img/jpmclogo.jpg
+Disallow: /img/map-image.jpg
+Disallow: /img/michlogo1.jpg
+Disallow: /img/Naples_Sculpture.jpg
+Disallow: /img/nmdoh.jpg
+Disallow: /img/nmdohs.jpg
+Disallow: /img/pvpure1.jpg
+Disallow: /img/Research_poster1.jpg
+Disallow: /img/sandialabs.jpg
+Disallow: /img/ZiaWoolz1.jpg
+Disallow: /img/triangle_background.png
+Disallow: /img/triangle_background2.png
+Disallow: /img/question.jpg
+
+Sitemap: https://rschleder.com/sitemap.xml
