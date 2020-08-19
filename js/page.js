@@ -65,8 +65,8 @@ var root = {
     "name": "Background",
     "description": "Hover to Learn about my History",
     "children": [{
-      "name": "Albuquerque, NM",
-      "address": "",
+      "name": "ABQ",
+      "address": "https://www.google.com/search?q=albuquerque",
       "note": "I was born and raised in a small southwestern city, known for hot air balloons, Green Chiles, and beautiful landscape"
     }, {
       "name": "NLP",
@@ -81,29 +81,29 @@ var root = {
     "name": "Career",
     "description": "Hover to Learn about my Professional interests",
     "children": [{
-      "name": "Machine Learning",
+      "name": "ML",
       "address": "",
-      "note": "I am interested in both the software and hardware components of this powerful technique"
+      "note": "I am interested in many different algorithms and network architectures across a veriety of applications"
     }, {
       "name": "Startups",
       "address": "",
       "note": "I hope to work on early stage growth companies, pushing technological progress"
     }, {
-      "name": "Health Data",
+      "name": "Health",
       "address": "",
       "note": "Through projects and work, I have become interested in how health data can improve everyday lives"
     }]
   }, {
-    "name": "Extracurriculars",
+    "name": "Hobbies",
     "description": "Hover to Learn about how I spend my Free Time",
     "children": [{
-      "name": "Interdisciplinary Research",
-      "note": "I enjoy collaborating with multiple disciplines, such as this past year working with UM Geology on experiment engineering",
-      "address": ""
+      "name": "Design",
+      "note": "Through Research and The Multidisciplinary Design program I have enjoyed collaborating with multiple disciplines, on various engineering projects",
+      "address": "https://mdp.engin.umich.edu/"
     }, {
       "name": "Innovation",
       "note": "former VP of New Member Education, current COO @ SEPi",
-      "address": "sepiumich.com"
+      "address": "https://sepiumich.com"
     }, {
       "name": "Entertainment",
       "note": "I spend my time watching and discussing Cinema, (my favorites are Tarantino's), baking sourdough and cookies, and photoshopping pictures of my friends",
